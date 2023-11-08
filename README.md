@@ -1,2 +1,2 @@
-# CoderHouse---Exerc-cios
-Repositório dedicado aos exercícios da plataforma CoderHouse. 
+# CoderHouse-Python
+# Repositório dedicado aos exercícios da plataforma CoderHouse. 
