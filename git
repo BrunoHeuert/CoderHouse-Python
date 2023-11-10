@@ -1,0 +1,6 @@
+Sequencias GIT:
+
+git status : verifica o que foi atualizado
+git add . : reconhece o que foi atualizado (deixa as atualizaçoes verdes)
+git commit -m "adiciona a mensagem de commit"
+git push : envia pro github 
