@@ -28,6 +28,29 @@ Agora, basta estar abrindo o arquivo do projeto disponibilizado no jupyter noteb
 
 Nele terão diversas funções utilizadas para a criação de DataFrames através da PokeAPI que vão simular uma Pokedéx, trazendo informações especificas sobre os Pokémons.
 
+# Código Explicação
+
+Para realizar o get do JSON dentro da PokeApi teve que ser criada diversas funções, sendo essas utilizadas na criação dos DataFrames com os resultados buscados pela API.
+
+Funções:
+- get_id: Essa função é responsável por trazer o respectivo id de cada Pokémon. Para fazer isso, na chamda da mesma ela acessa o dicionário "results" da API "https://pokeapi.co/api/v2/pokemon" e acessa cada endpoint dando um get no "id" de cada URL de pokémon.
+- get_info: Assim como a função "get_id", a função "get_info" acesso o "results" da API "https://pokeapi.co/api/v2/pokemon" e busca pelos campos "id", "base_experience", "height" e "weight" de cada respectivo Pokémon.
+- get_stats: Da mesma forma que as funções acima, essa vai pegar os status dos Pokémon, sendo eles "hp", "attack", "defense", "special_attack", "special_defense" e "speed". Dessa vez, como os dados pegos estão dentro da lista "stats", teve-se que percorrer um for dentro da lista pegando o valor do "base_stat" de cada status.
+- get_types: Seguinto exatamente a mesma fórmula do get_stats, dessa vez acessando a lista "types" foram pegos os tipos dos Pokémons. Porém, como nem todos Pokémons tem um tipo secundário, foi utilizado o método "try - except", no qual quando o tipo secundário não existisse ele traria preenchido como "None".
+
+Tabelas:
+- df_pokemon: Nessa tabela, foi criado um DataFrame que possui os dados de "id" e "name" de cada respectivo Pokémon. Para consulta do "id" foi utilizado um get da função "get_id", já o name foi pego do dicionário "results" pertecente a API "https://pokeapi.co/api/v2/pokemon".
+- df_poke_info: Já aqui, o DataFrame foi criado com os dados puxados da API "get_info", na qual pegava o "id", "base_experience", "height" e "weight" de cada Pokémon, sendo replicados em colunas no DataFrame.
+- df_poke_stats: Para a criação desse DataFrame, foi dado um get na função "get_stats", sendo essa responsável por trazer os status dos Pokémons, sendo eles "hp", "attack", "defense", "special_attack", "special_defense" e "speed". Assim como anteriormente, esses dados foram replicados em colunas para o DataFrame.
+- df_poke_types: Nesse DataFrame, os dados foram pego através da função "get_types". Nela foram pegos os tipos primário e secundário de cada pokémon, caso algum dos mesmos não possuísse tipo secundario, o mesmo vem como "None", sendo esse substituido por "" posteriormente através do tratamento "fillna".
+
+Tratamentos:
+- .info: Utilizado em todas as tabelas para consultar as informações de cada tabela.
+- isna: Utilizado em todas as tabelas para consultar se as tabelas possuem dados nulos.
+- fillna: Utilizado somente nas tabelas onde foram identificados valores nulos ("None") para substitui-los por "".
+
+Para facilitar todo o código encontra-se comentado.
+
 # Fim
 
 O projeto foi desenvolvido com bastante carinho, então aproveite!
