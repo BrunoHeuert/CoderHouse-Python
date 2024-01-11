@@ -38,8 +38,11 @@ Funções:
 - get_info: Assim como a função "get_id", a função "get_info" acesso o "results" da API "https://pokeapi.co/api/v2/pokemon" e busca pelos campos "id", "base_experience", "height" e "weight" de cada respectivo Pokémon.
 - get_stats: Da mesma forma que as funções acima, essa vai pegar os status dos Pokémon, sendo eles "hp", "attack", "defense", "special_attack", "special_defense" e "speed". Dessa vez, como os dados pegos estão dentro da lista "stats", teve-se que percorrer um for dentro da lista pegando o valor do "base_stat" de cada status.
 - get_types: Seguinto exatamente a mesma fórmula do get_stats, dessa vez acessando a lista "types" foram pegos os tipos dos Pokémons. Porém, como nem todos Pokémons tem um tipo secundário, foi utilizado o método "try - except", no qual quando o tipo secundário não existisse ele traria preenchido como "None".
+- tabelas_bd: Função que busca na database MASTER todas as tabelas cadastradas no Banco de Dados.
+- salva_bd: Função responsável por salvar os dados de um DataFrame dentro de uma nova tabela gerada junto a ela.
+- carrega_bd: Função responsável por executar o select da tabela selecionada, dessa forma mostrando os dados da mesma.
 
-Tabelas:
+Tabelas/Dataframes:
 - df_pokemon: Nessa tabela, foi criado um DataFrame que possui os dados de "id" e "name" de cada respectivo Pokémon. Para consulta do "id" foi utilizado um get da função "get_id", já o name foi pego do dicionário "results" pertecente a API "https://pokeapi.co/api/v2/pokemon".
 - df_poke_info: Já aqui, o DataFrame foi criado com os dados puxados da API "get_info", na qual pegava o "id", "base_experience", "height" e "weight" de cada Pokémon, sendo replicados em colunas no DataFrame.
 - df_poke_stats: Para a criação desse DataFrame, foi dado um get na função "get_stats", sendo essa responsável por trazer os status dos Pokémons, sendo eles "hp", "attack", "defense", "special_attack", "special_defense" e "speed". Assim como anteriormente, esses dados foram replicados em colunas para o DataFrame.
