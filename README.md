@@ -1,6 +1,6 @@
 # Projeto Final PokeAPI
 
-Esse projeto foi desenvolvido para ser uma Pokedex, na qual busca por dados de diversos pokémons consultados através da api "PokeAPI".
+Esse projeto foi desenvolvido para ser um protótipo de uma Pokedex, na qual busca por dados de diversos pokémons consultados através da api "PokeAPI".
 
 # Pré-requisitos
 
@@ -9,6 +9,7 @@ Para a execução desse projeto, é necessário a utilização das seguintes bib
 - requests
 - pandas
 - plyer
+- sqlite3
 
 O arquivo "requirements.txt" está disponível no projeto com todas a bibliotecas e suas versões, incluindo o próprio ipykernel.
 
